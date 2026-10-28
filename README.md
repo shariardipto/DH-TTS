@@ -37,8 +37,7 @@ The project covers the complete experimental workflow:
 | Hugging Face ZeroGPU inference | ✅ Verified | Playable Bengali audio generated with the fine-tuned model |
 | Private cloud audio storage | ✅ Verified | Generated WAV visible in mounted private HF bucket |
 | Netlify React frontend | ✅ Deployed | [dh-tts.netlify.app](https://dh-tts.netlify.app/) |
-| Public frontend-to-model API integration | 🧪 In progress | Secure integration prepared; live end-to-end test pending |
-| Perceptual base-vs-fine-tuned evaluation | ⏳ Pending | No comparative MOS/WER improvement claim |
+| Public frontend-to-model API integration | ✅ Verified | Live Netlify → HF ZeroGPU audio generation successful |
 
 ## System architecture
 
