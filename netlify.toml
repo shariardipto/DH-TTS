@@ -5,6 +5,11 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  VITE_HF_DEMO_MODE = "true"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "/*"
