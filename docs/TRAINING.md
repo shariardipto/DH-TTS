@@ -4,7 +4,7 @@
 
 | Setting | Value |
 | --- | --- |
-| Pretrained base | `ai4bharat/IndicF5` |
+| Pretrained base | `IndicF5` |
 | Architecture | CFM + DiT, dimension 1024, depth 22, 16 heads |
 | Model parameters updated | All model parameters (full-parameter fine-tuning) |
 | Train / validation | 682 / 76 audio clips |
