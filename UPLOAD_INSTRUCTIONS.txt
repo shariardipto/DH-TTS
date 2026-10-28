@@ -1,0 +1,11 @@
+DH-TTS GITHUB PUBLIC STARTER — MANUAL UPLOAD
+
+1. Extract this ZIP on your computer. Do NOT upload the ZIP itself to GitHub.
+2. Open: https://github.com/shariardipto/DH-TTS
+3. In Quick setup, click "uploading an existing file" (or Add file → Upload files).
+4. Drag the extracted README.md, .gitignore, docs folder and scripts folder into the upload page. Do NOT drag your IndicF5, DH-TTS-Training or Private-Exports directories.
+5. Review the preview: ONLY README.md, .gitignore, docs/*.md, scripts/*.py should be public. UPLOAD_INSTRUCTIONS.txt is optional.
+6. Commit with message: "Add DH-TTS engineering portfolio and verified model documentation".
+7. Check the repository is public and the Hugging Face model stays private.
+
+No licensed sample audio, model weights, or original datasets are included.

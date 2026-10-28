@@ -1,0 +1,51 @@
+# Never commit private speech data or checkpoints
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.parquet
+*.arrow
+*.csv
+
+# Training/data and generated outputs
+datasets/
+dataset/
+data/
+checkpoints/
+logs/
+outputs/
+test_outputs/
+benchmark/reference/
+benchmark/outputs/
+reference/
+references/
+voice_profiles/
+
+# Credentials, local environments, caches
+.env
+.env.*
+*.pem
+*.key
+*.token
+.venv/
+.venv_*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.ipynb_checkpoints/
+wandb/
+
+# Local IDE and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
