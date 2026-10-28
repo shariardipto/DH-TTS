@@ -47,7 +47,7 @@ The project covers the complete experimental workflow:
 flowchart LR
     A[Authorized Bengali recordings] --> B[Cleaning and transcript normalization]
     B --> C[Training and validation splits]
-    D[AI4Bharat IndicF5] --> E[Full-parameter fine-tuning]
+    D[IndicF5] --> E[Full-parameter fine-tuning]
     C --> E
     E --> F[EMA checkpoint]
     F --> G[Inference-only Safetensors]
@@ -75,7 +75,7 @@ The model repository and audio bucket remain **private**. The browser must never
 
 | Metric | Result |
 | --- | --- |
-| Base architecture | AI4Bharat IndicF5 (CFM / DiT) |
+| Base architecture | IndicF5 (CFM / DiT) |
 | Fine-tuning | Full-parameter PyTorch / AdamW |
 | Training split | 682 clips |
 | Validation split | 76 clips |
