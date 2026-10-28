@@ -1,7 +1,7 @@
 import { json, sameOrigin } from '../lib/http.mjs'
 import { consumeQuota, DAILY_IP_LIMIT, DAILY_SITE_LIMIT } from '../lib/quota.mjs'
 
-const MAX_WAV_BYTES = 2 * 1024 * 1024
+const MAX_WAV_BYTES = 3 * 1024 * 1024
 const MAX_AUDIO_OUT_BYTES = 3 * 1024 * 1024
 const SPACE_URL = 'https://shariardipto-dh-tts-inference.hf.space'
 const REQUEST_TIMEOUT_MS = 52_000
@@ -29,7 +29,7 @@ function isValidWav(wav) {
   if (fmt.rate < 8000 || fmt.rate>48000 || ![8,16,24,32].includes(fmt.bits)) return false
   if (fmt.align !== fmt.channels*fmt.bits/8 || fmt.bytesPerSecond!==fmt.rate*fmt.align) return false
   const seconds = dataSize / fmt.bytesPerSecond
-  return dataSize>0 && seconds>=1 && seconds<=15
+  return dataSize>0 && seconds>=1 && seconds<=30
 }
 
 async function getSSEComplete(response) {
@@ -62,7 +62,7 @@ export default async function handler(req) {
   const token=process.env.HF_TOKEN
   if (!token) return json({error:'Service is temporarily unavailable.'},503)
   const clen=Number(req.headers.get('content-length')||0)
-  if (clen>2.5*1024*1024) return json({error:'Upload exceeds size limit.'},413)
+  if (clen>4*1024*1024) return json({error:'Upload exceeds size limit.'},413)
 
   try {
     // Validate before consuming a public request slot.

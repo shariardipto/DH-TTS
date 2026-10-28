@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const GENERATE_ENDPOINT = '/api/generate'
 const MAX_TEXT = 250
 const MAX_REF_TEXT = 1000
-const MAX_WAV = 2 * 1024 * 1024
+const MAX_WAV = 3 * 1024 * 1024
 
 async function requestJSON(path, options) {
   const response = await fetch(path, { credentials: 'omit', cache: 'no-store', ...options })
@@ -30,7 +30,7 @@ export default function DemoApp() {
   async function generate() {
     setError('')
     if (!text.trim() || text.length > MAX_TEXT) return setError('বাংলা Text ১–২৫০ অক্ষরের মধ্যে দিন।')
-    if (!refFile || refFile.size > MAX_WAV || !/\.wav$/i.test(refFile.name)) return setError('সর্বোচ্চ ২ MB-এর WAV Reference Audio দিন।')
+    if (!refFile || refFile.size > MAX_WAV || !/\.wav$/i.test(refFile.name)) return setError('সর্বোচ্চ ৩ MB-এর WAV Reference Audio দিন।')
     if (!refText.trim() || refText.length > MAX_REF_TEXT) return setError('Reference Audio-এর Transcript (সর্বোচ্চ ১০০০ অক্ষর) দিন।')
     if (!consent) return setError('Reference Voice ব্যবহারের অনুমতি নিশ্চিত করুন।')
 
@@ -72,7 +72,7 @@ export default function DemoApp() {
         <div className="grid two">
           <section className="panel editor-panel">
             <div className="field-row"><label>Voice<input value="Authorized Reference WAV" disabled /></label><label>Mode<input value="Bangladesh Bangla" disabled /></label></div>
-            <label className="hf-label">Reference WAV (max 2 MB · max 15 seconds)<input className="hf-file" type="file" accept=".wav,audio/wav" onChange={e=>setRefFile(e.target.files?.[0] || null)} /></label>
+            <label className="hf-label">Reference WAV (max 3 MB · max 30 seconds)<input className="hf-file" type="file" accept=".wav,audio/wav" onChange={e=>setRefFile(e.target.files?.[0] || null)} /></label>
             <label className="hf-label">Reference Audio Transcript<textarea className="hf-reference-text" maxLength={MAX_REF_TEXT} value={refText} onChange={e=>setRefText(e.target.value)} placeholder="Reference WAV-এ যা বলা হয়েছে, হুবহু লিখুন…" /></label>
             <label className="hf-consent"><input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)} /> I have permission to use this reference voice.</label>
             <label className="hf-label" htmlFor="dh-bengali-text">বাংলা Text</label>
