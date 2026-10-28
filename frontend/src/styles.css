@@ -10,3 +10,5 @@
 .editor-panel textarea.hf-main-text{min-height:180px}
 .hf-result audio{display:block;width:100%;margin:18px 0}
 .hf-result .button{display:inline-block}
+
+.hf-public-notice { margin: 0 0 14px; padding: 12px 15px; background:#fff7e8; border:1px solid #e7cf9e; color:#54431f; font-size:13px; border-radius:10px; line-height:1.5; }

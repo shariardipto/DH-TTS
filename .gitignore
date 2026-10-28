@@ -1,6 +1,8 @@
-node_modules/
-dist/
-.env
-.env.*
-!.env.example
-.netlify/
+**/.env
+**/.env.*
+!**/.env.example
+**/node_modules/
+**/dist/
+*.safetensors
+*.pt
+*.wav
